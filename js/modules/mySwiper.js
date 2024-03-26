@@ -78,12 +78,8 @@ export default class MySwiper {
       modules: [Navigation, Pagination, Scrollbar, Mousewheel, HashNavigation, Manipulation],
       direction: "vertical",
       speed: 1000,
-      // simulateTouch: true,
       touchRatio: 1,
-      // touchAngle: 45,
-      // threshold: 20,
       allowTouchMove: true,
-      // followFinger: true,
       mousewheel: true,
       passiveListeners: true,
       observer: true,
@@ -383,31 +379,7 @@ export default class MySwiper {
         activeLink.classList.add('active-link');
     }
   }
-  
-  handleHashChange() {
-      const hash = window.location.hash;
-      const category = this.mapHashToCategory(hash);
-
-      if (category) {
-          this.filterSlides(category);
-      }
-  }
-
-  mapHashToCategory(hash) {
-      switch (hash) {
-        case '#viw':
-              return 'all';
-          case '#quadritone':
-              return 'residencias';
-          case '#viw':
-              return 'edificios';
-          case '#teatrosescatalaia':
-              return 'institucionais';
-          default:
-              return null;
-      }
-  }
-    
+ 
   filterSlides(category) {
     let filteredSlides;
 
@@ -431,7 +403,7 @@ export default class MySwiper {
     if (filteredSlides.length > 0) {
         this.swiper.slideTo(0, 0); // Navega sem delay
     }
-}
+  }
 
   navigateToFirstSlideOfCategory(category) {
     if (category === 'all') {
@@ -447,17 +419,6 @@ export default class MySwiper {
             this.swiper.slideTo(i); // Move para o primeiro slide da categoria.
             break; // Interrompe o loop após encontrar o primeiro slide correspondente.
         }
-    }
-  }
-
-  navigateToSlide(hash) {
-    const targetSlideIndex = this.swiper.slides.findIndex(slide =>
-        slide.getAttribute('data-hash') === hash
-    );
-
-    // Se um slide válido for encontrado, navega para esse slide
-    if (targetSlideIndex !== -1) {
-        this.swiper.slideTo(targetSlideIndex, 1000); // 1000 é o tempo da animação em milissegundos
     }
   }
 
@@ -592,60 +553,6 @@ export default class MySwiper {
     }
   }
 
-  /**
-  * Updates titles and subtitles for the current and previous slides.
-  * @param {number} currentSlideIndex - The index of the current slide.
-  * @param {number} previousSlideIndex - The index of the previous slide.
-  */
-  // updateSlideTitlesAndSubtitles(currentSlideIndex, previousSlideIndex) {
-  //   // Handling titles and subtitles animation
-  //   const allTitlesAndSubtitles = document.querySelectorAll('.page__title, .page__subtitle');
-  //   this.clearAnimationClasses(allTitlesAndSubtitles);
-
-  //   // If there are no slides, return early
-  //   const activeSlide = this.swiper.slides[currentSlideIndex];
-  //   const previousSlide = this.swiper.slides[previousSlideIndex];
-  //   if (!activeSlide || !previousSlide) return;
-
-  //   // Adding animation classes to active slide's titles and subtitles
-  //   this.addAnimationClassesToSlide(activeSlide, currentSlideIndex > previousSlideIndex);
-  //   this.clearAnimationClasses(previousSlide.querySelectorAll('.slide__title, .subtitle__part1, .subtitle__part2, .subtitle__part3'));
-  // }
-
-  /**
-  * Clears animation classes from the given elements.
-  * @param {NodeListOf<Element>} elements - The elements to clear classes from.
-  */
-  // clearAnimationClasses(elements) {
-  //   elements.forEach(el => {
-  //       el.classList.remove('anime-up-text-active', 'anime-up-text-down', 'anime-up-active-title', 'anime-down-active-title', 'anime-up-active-sub', 'anime-down-active-sub');
-  //   });
-  // }
-
-  /**
-  * Adds animation classes to titles and subtitles in a slide.
-  * @param {Element} slide - The slide to add animation classes to.
-  * @param {boolean} isScrollingDown - Indicates if the slide is scrolling down.
-  */
-  // addAnimationClassesToSlide(slide, isScrollingDown) {
-  //   const animationClass = isScrollingDown ? 'anime-up-active' : 'anime-down-active';
-  //   slide.querySelectorAll('.slide__title, .subtitle__part1, .subtitle__part2, .subtitle__part3').forEach(el => {
-  //       el.classList.add(`${animationClass}-${el.classList.contains('slide__title') ? 'title' : 'sub'}`);
-  //   });
-  // }
-  
-  // animateSubtitleParts() {
-  //   var subtitleParts = document.querySelectorAll('.subtitle__part1, .subtitle__part2, .subtitle__part3');
-
-  //   anime ({
-  //     targets: subtitleParts,
-  //     translateY: [100, 0], // Slide in from the bottom
-  //     opacity: [0, 1], // Fade-in effect
-  //     duration: 1000, // Animation duration in milliseconds
-  //     easing: 'easeInOutQuad', // Easing function
-  //     delay: anime.stagger(200), // Delay between animations for each element
-  //   });
-  // }
 
   hideProjectMenu() {
     // Verifica se a largura da tela é maior que 800px
