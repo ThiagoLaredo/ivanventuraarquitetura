@@ -7,4 +7,4 @@ node_modules/
 # Ignorar arquivos de configuração específicos do sistema operacional
 .DS_Store
 
-dist/
+# dist/
