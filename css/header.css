@@ -44,17 +44,6 @@
   align-items: center;
 }
 
-/* .nav__button, .menu__projetos,  #botao-voltar, #botao-down, .nav__button__mobile   {
-  opacity: 0;
-  transition: all .5s ease-out;
-}
-
-.nav__button__home { transform: translate(-20px, -20px); }
-.menu__projetos, .nav__button__mobile  { transform: translate(20px, -20px); }
-.nav__button__estudio, #botao-voltar { transform: translate(-20px, 20px); }
-.nav__button__contato, #botao-down  { transform: translate(20px, 20px); } */
-
-
 .nav__button.nav__button__home {
   top: var(--nav-b-mg1);
   left: var(--nav-b-mg2);
