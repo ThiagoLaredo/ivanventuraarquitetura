@@ -15,7 +15,7 @@ li span {
 
 .subtitle__part1.project__name {
   color: var(--bg);
-  font: 10rem/1 "Inter", sans-serif;
+  font: 10rem/1.25 "Inter", sans-serif;
 }
 
 .bio__project {
@@ -120,7 +120,7 @@ li span {
   }
 
   .subtitle__part1.project__name {
-    font: 4rem/1 "Inter", sans-serif;
+    font: 4rem/1.25 "Inter", sans-serif;
     max-width: 20ch;
     margin-left: 0.6rem;
     color: var(--bg);

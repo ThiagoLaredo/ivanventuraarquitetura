@@ -113,5 +113,3 @@ module.exports = {
     open: true, // Abre o navegador automaticamente
   },
 };
-
-
